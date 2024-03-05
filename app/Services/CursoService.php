@@ -22,4 +22,8 @@ class CursoService
     {
         return $this->cursoRepository->all();
     }
+    public function findById($id)
+    {
+        return $this->cursoRepository->findById($id);
+    }
 }

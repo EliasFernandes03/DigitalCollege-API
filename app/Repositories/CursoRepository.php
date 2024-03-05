@@ -20,4 +20,10 @@ class CursoRepository
         DB::connection()->getPdo();
         return Curso::all();
     }
+
+    public function findById($id)
+    {
+        DB::connection()->getPdo();
+        return Curso::findOrFail($id);
+    }
 }

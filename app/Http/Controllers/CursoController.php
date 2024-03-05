@@ -26,9 +26,15 @@ class CursoController extends Controller
         return response()->json($curso, 201);
     }
 
-    public function show() 
+    public function show(Request $request) 
     {
             $curso = $this->cursoService->showCurso();
+            return response()->json($curso,200);
+    }
+
+    public function showById(Request $request,$id) 
+    {
+            $curso = $this->cursoService->findById($id);
             return response()->json($curso,200);
     }
 }
