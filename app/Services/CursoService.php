@@ -17,4 +17,9 @@ class CursoService
     {
         return $this->cursoRepository->create($data);
     }
+
+    public function showCurso()
+    {
+        return $this->cursoRepository->all();
+    }
 }

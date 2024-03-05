@@ -14,4 +14,10 @@ class CursoRepository
         
         return Curso::create($data);
     }
+
+    public function all() 
+    {
+        DB::connection()->getPdo();
+        return Curso::all();
+    }
 }

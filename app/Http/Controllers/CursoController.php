@@ -25,4 +25,10 @@ class CursoController extends Controller
 
         return response()->json($curso, 201);
     }
+
+    public function show() 
+    {
+            $curso = $this->cursoService->showCurso();
+            return response()->json($curso,200);
+    }
 }
