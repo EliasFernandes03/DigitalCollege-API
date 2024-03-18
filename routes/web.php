@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UnidadeController;
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
@@ -15,14 +16,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/check-db-connection', function () {
-    try {
-        DB::connection()->getPdo();
-        return response()->json(['message' => 'Conexão com o banco de dados estabelecida com sucesso']);
-    } catch (\Exception $e) {
-        return response()->json(['message' => 'Erro ao conectar ao banco de dados: ' . $e->getMessage()], 500);
-    }
-});
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+Route::get('/unidade',[UnidadeController::class,'show']);
